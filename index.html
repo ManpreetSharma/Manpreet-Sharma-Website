@@ -1,6 +1,961 @@
-<html>
-  <body>
-    <h1>Welcome to my website!</h1>
-    <h2>My name is Manpreet Sharma </h2>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Manpreet Sharma | Senior Data Scientist</title>
+
+  <meta
+    name="description"
+    content="Manpreet Sharma — Senior Data Scientist specializing in AI, Machine Learning, GenAI, LLMs, RAG and Multimodal AI."
+  />
+
+  <style>
+    :root {
+      --bg: #08090d;
+      --bg-secondary: #0e1017;
+      --card: rgba(255, 255, 255, 0.045);
+      --border: rgba(255, 255, 255, 0.09);
+      --text: #f5f7fa;
+      --muted: #9da3ae;
+      --accent: #8b5cf6;
+      --accent-2: #22d3ee;
+      --max-width: 1150px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(139, 92, 246, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(34, 211, 238, 0.10),
+          transparent 25%
+        ),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 9, 13, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 999px;
+      color: #c7cbd4;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #22c55e;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.98;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        100deg,
+        #ffffff,
+        #b8a2ff 45%,
+        #67e8f9
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title {
+      color: var(--muted);
+      font-size: clamp(20px, 3vw, 30px);
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: #aeb4c0;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #08090d;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary {
+      color: white;
+      background: var(--card);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(139, 92, 246, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 38px;
+      letter-spacing: -1.5px;
+      margin-bottom: 45px;
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .stat {
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 16px;
+    }
+
+    .stat-number {
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+      position: relative;
+      margin-left: 10px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .experience {
+      position: relative;
+      padding-left: 42px;
+      margin-bottom: 55px;
+    }
+
+    .experience::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .role {
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .company {
+      color: var(--accent-2);
+      margin-top: 3px;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .experience ul {
+      padding-left: 18px;
+      color: #b0b6c1;
+    }
+
+    .experience li {
+      margin-bottom: 10px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.015)
+      );
+      border-radius: 18px;
+      transition: 0.25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    .skill-card h3 {
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 7px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #bfc4ce;
+      font-size: 12px;
+    }
+
+    /* EDUCATION */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 18px;
+    }
+
+    .degree {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .institution {
+      color: var(--accent-2);
+      margin: 8px 0;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* INTERESTS */
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .interest {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: #c5cad3;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      padding: 110px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: #707680;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .date {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">
+        MS<span>.</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero" id="about">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          Senior Data Scientist · AI / ML
+        </div>
+
+        <h1>
+          Manpreet<br />
+          <span class="gradient-text">Sharma.</span>
+        </h1>
+
+        <div class="hero-title">
+          Building intelligent systems with AI, ML & GenAI.
+        </div>
+
+        <p class="hero-description">
+          Senior Data Scientist with 8 years of experience designing and
+          deploying production-grade AI/ML and GenAI systems. My work spans
+          LLMs, RAG, multimodal AI, NLP, computer vision, audio intelligence,
+          document intelligence and automated decision-making systems.
+        </p>
+
+        <div class="buttons">
+          <a
+            href="mailto:sharmamanpreet52@gmail.com"
+            class="btn btn-primary"
+          >
+            Let's Connect
+          </a>
+
+          <a href="#experience" class="btn btn-secondary">
+            Explore My Work ↓
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- STATS -->
+
+  <section>
+    <div class="container">
+
+      <div class="stats">
+
+        <div class="stat">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">$2M+</div>
+          <div class="stat-label">Annual Business Impact</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">90%+</div>
+          <div class="stat-label">Efficiency Improvements</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">AI × ML</div>
+          <div class="stat-label">Applied Intelligence</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-label">Career</div>
+
+      <h2 class="section-title">
+        Experience
+      </h2>
+
+      <div class="timeline">
+
+        <!-- OPTUM -->
+
+        <div class="experience">
+
+          <div class="experience-header">
+
+            <div>
+              <div class="role">Sr. Data Scientist</div>
+              <div class="company">
+                Optum · UnitedHealth Group
+              </div>
+            </div>
+
+            <div class="date">
+              Dec 2021 — Present · Gurgaon, India
+            </div>
+
+          </div>
+
+          <ul>
+            <li>
+              Led development of AI/ML and GenAI products across
+              healthcare operations, claims adjudication, compliance
+              and analytics.
+            </li>
+
+            <li>
+              Managed and mentored a team of Data Scientists while
+              driving initiatives from ideation through production.
+            </li>
+
+            <li>
+              Built scalable supervised, unsupervised, clustering,
+              NLP, Vision AI and LLM-based solutions.
+            </li>
+
+            <li>
+              Designed AI architectures integrating LLMs, vector
+              search, retrieval systems and machine learning models.
+            </li>
+
+            <li>
+              Partnered with cross-functional stakeholders to define
+              AI strategy and prioritize high-value use cases.
+            </li>
+
+            <li>
+              Productionized AI solutions with validation, monitoring,
+              governance and human-in-the-loop controls.
+            </li>
+          </ul>
+
+        </div>
+
+
+        <!-- SQUADSTACK -->
+
+        <div class="experience">
+
+          <div class="experience-header">
+
+            <div>
+              <div class="role">Data Scientist</div>
+              <div class="company">
+                SquadStack.AI
+              </div>
+            </div>
+
+            <div class="date">
+              Oct 2018 — Nov 2021 · Noida, India
+            </div>
+
+          </div>
+
+          <ul>
+
+            <li>
+              Built and deployed supervised and unsupervised ML
+              models to improve sales conversion and operational
+              efficiency.
+            </li>
+
+            <li>
+              Engineered features from structured, text and audio
+              data including TF-IDF, MFCC and spectrograms.
+            </li>
+
+            <li>
+              Developed fraud detection and lead prioritization
+              models to improve business outcomes.
+            </li>
+
+            <li>
+              Applied K-Means clustering for user segmentation and
+              matching optimization.
+            </li>
+
+            <li>
+              Automated data pipelines and dashboards, saving
+              1,000+ hours annually.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-label">What I Work With</div>
+
+      <h2 class="section-title">
+        Technical Expertise
+      </h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+
+          <h3>GenAI & LLMs</h3>
+
+          <div class="tags">
+            <span class="tag">LLMs</span>
+            <span class="tag">RAG</span>
+            <span class="tag">AI Agents</span>
+            <span class="tag">NL2SQL</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">Embeddings</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">LLM Evaluation</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+          <h3>Machine Learning</h3>
+
+          <div class="tags">
+            <span class="tag">Classification</span>
+            <span class="tag">Regression</span>
+            <span class="tag">Clustering</span>
+            <span class="tag">Feature Engineering</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Model Explainability</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">PyTorch</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+          <h3>Applied AI</h3>
+
+          <div class="tags">
+            <span class="tag">Multimodal AI</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Document Intelligence</span>
+            <span class="tag">OCR</span>
+            <span class="tag">Conversational AI</span>
+            <span class="tag">Decision Automation</span>
+            <span class="tag">Information Extraction</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+          <h3>Programming & Data</h3>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">ETL</span>
+            <span class="tag">Data Pipelines</span>
+          </div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+          <h3>MLOps & Cloud</h3>
+
+          <div class="tags">
+            <span class="tag">Azure OpenAI</span>
+            <span class="tag">Azure AI Search</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Git</span>
+            <span class="tag">CI/CD</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <div class="section-label">Education</div>
+
+      <h2 class="section-title">
+        Academic Background
+      </h2>
+
+      <div class="education-grid">
+
+        <div class="education-card">
+
+          <div class="degree">
+            M.Tech. — Mechanical Engineering
+          </div>
+
+          <div class="institution">
+            Indian Institute of Technology Delhi
+          </div>
+
+          <div class="education-meta">
+            2016 — 2018 · Delhi
+          </div>
+
+        </div>
+
+
+        <div class="education-card">
+
+          <div class="degree">
+            B.Tech. — Mechanical Engineering
+          </div>
+
+          <div class="institution">
+            University College of Engineering, Patiala
+          </div>
+
+          <div class="education-meta">
+            2012 — 2016 · Patiala
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTERESTS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label">Beyond Work</div>
+
+      <h2 class="section-title">
+        Things I Enjoy
+      </h2>
+
+      <div class="interests">
+
+        <div class="interest">🏋️ Strength Training</div>
+        <div class="interest">🥊 Muay Thai</div>
+        <div class="interest">📈 Investing</div>
+        <div class="interest">🎌 Anime</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <h2>
+        Let's build something<br />
+        <span class="gradient-text">intelligent.</span>
+      </h2>
+
+      <p>
+        Interested in AI, ML, GenAI or just a good technical conversation?
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          href="mailto:sharmamanpreet52@gmail.com"
+          class="btn btn-primary"
+        >
+          Email Me
+        </a>
+
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Manpreet Sharma · Senior Data Scientist
+  </footer>
+
+</body>
 </html>
