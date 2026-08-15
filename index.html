@@ -14,7 +14,6 @@
 
   <!-- =========================================================
        GOOGLE ANALYTICS 4
-       Measurement ID: G-D4DYTTDN2G
        ========================================================= -->
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4DYTTDN2G"></script>
@@ -81,13 +80,21 @@
         var(--bg);
 
       color: var(--text);
+
       line-height: 1.6;
+
+      overflow-x: hidden;
     }
 
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+
+    button {
+      font-family: inherit;
     }
 
 
@@ -104,11 +111,11 @@
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
 
       backdrop-filter: blur(18px);
 
-      background: rgba(8, 9, 13, 0.72);
+      background: rgba(8, 9, 13, 0.78);
 
       border-bottom: 1px solid var(--border);
     }
@@ -118,14 +125,18 @@
       height: 70px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
     }
 
 
     .logo {
       font-size: 20px;
+
       font-weight: 800;
+
       letter-spacing: -0.5px;
     }
 
@@ -137,6 +148,9 @@
 
     .nav-links {
       display: flex;
+
+      align-items: center;
+
       gap: 28px;
 
       color: var(--muted);
@@ -145,8 +159,76 @@
     }
 
 
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+
     .nav-links a:hover {
       color: white;
+    }
+
+
+    /* Mobile menu button */
+
+    .menu-toggle {
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      align-items: center;
+      justify-content: center;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 10px;
+
+      color: white;
+
+      font-size: 22px;
+
+      cursor: pointer;
+    }
+
+
+    /* Mobile dropdown */
+
+    .mobile-menu {
+      display: none;
+
+      border-top: 1px solid var(--border);
+
+      background: rgba(8, 9, 13, 0.96);
+
+      backdrop-filter: blur(18px);
+    }
+
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+
+    .mobile-menu a {
+      display: block;
+
+      padding: 16px 5%;
+
+      color: var(--muted);
+
+      border-bottom: 1px solid var(--border);
+
+      font-size: 15px;
+    }
+
+
+    .mobile-menu a:hover {
+      color: white;
+
+      background: rgba(255,255,255,0.03);
     }
 
 
@@ -158,9 +240,11 @@
       min-height: 88vh;
 
       display: flex;
+
       align-items: center;
 
       position: relative;
+
       overflow: hidden;
     }
 
@@ -172,6 +256,7 @@
 
     .eyebrow {
       display: inline-flex;
+
       align-items: center;
 
       gap: 8px;
@@ -194,6 +279,7 @@
 
     .status-dot {
       width: 7px;
+
       height: 7px;
 
       background: #22c55e;
@@ -225,6 +311,7 @@
         );
 
       -webkit-background-clip: text;
+
       -webkit-text-fill-color: transparent;
     }
 
@@ -261,6 +348,12 @@
 
 
     .btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
       padding: 12px 20px;
 
       border-radius: 10px;
@@ -279,6 +372,7 @@
 
     .btn-primary {
       background: white;
+
       color: #08090d;
     }
 
@@ -361,6 +455,16 @@
       background: var(--card);
 
       border-radius: 16px;
+
+      transition: 0.25s;
+    }
+
+
+    .stat:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(139, 92, 246, 0.35);
     }
 
 
@@ -580,6 +684,16 @@
       background: var(--card);
 
       border-radius: 18px;
+
+      transition: 0.25s;
+    }
+
+
+    .education-card:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(139, 92, 246, 0.35);
     }
 
 
@@ -627,6 +741,16 @@
       background: var(--card);
 
       color: #c5cad3;
+
+      transition: 0.25s;
+    }
+
+
+    .interest:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(139, 92, 246, 0.4);
     }
 
 
@@ -701,13 +825,47 @@
       }
 
 
+      .menu-toggle {
+        display: flex;
+      }
+
+
       .hero {
         min-height: 80vh;
+
+        padding: 60px 0;
       }
 
 
       h1 {
         letter-spacing: -3px;
+
+        font-size:
+          clamp(48px, 15vw, 72px);
+      }
+
+
+      .hero-title {
+        font-size: 22px;
+      }
+
+
+      .hero-description {
+        font-size: 15px;
+
+        line-height: 1.75;
+      }
+
+
+      .buttons {
+        width: 100%;
+      }
+
+
+      .buttons .btn {
+        flex: 1;
+
+        min-width: 150px;
       }
 
 
@@ -734,18 +892,72 @@
         white-space: normal;
       }
 
+
+      section {
+        padding: 80px 0;
+      }
+
+
+      .section-title {
+        font-size: 32px;
+      }
+
+
+      .contact {
+        padding: 90px 20px;
+      }
+
     }
 
 
     @media (max-width: 450px) {
+
+      .container {
+        width: 88%;
+      }
+
 
       .stats {
         grid-template-columns: 1fr;
       }
 
 
-      section {
-        padding: 75px 0;
+      .stat {
+        padding: 22px;
+      }
+
+
+      .buttons {
+        flex-direction: column;
+      }
+
+
+      .buttons .btn {
+        width: 100%;
+
+        flex: none;
+      }
+
+
+      .contact-links {
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+
+      .contact-links .btn {
+        width: 100%;
+      }
+
+
+      .experience {
+        padding-left: 30px;
+      }
+
+
+      .role {
+        font-size: 20px;
       }
 
     }
@@ -766,10 +978,12 @@
 
     <div class="container nav-inner">
 
-      <div class="logo">
+      <a href="#about" class="logo">
         MS<span>.</span>
-      </div>
+      </a>
 
+
+      <!-- DESKTOP NAV -->
 
       <div class="nav-links">
 
@@ -794,6 +1008,45 @@
         </a>
 
       </div>
+
+
+      <!-- MOBILE MENU BUTTON -->
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#experience">
+        Experience
+      </a>
+
+      <a href="#skills">
+        Skills
+      </a>
+
+      <a href="#education">
+        Education
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
 
     </div>
 
@@ -851,9 +1104,7 @@
         <div class="buttons">
 
 
-          <!-- =================================================
-               LINKEDIN
-               ================================================= -->
+          <!-- LINKEDIN -->
 
           <a
             href="https://www.linkedin.com/in/manpreetsharma1/"
@@ -862,14 +1113,10 @@
             class="btn btn-primary"
 
             onclick="
-              gtag(
-                'event',
-                'linkedin_click',
-                {
-                  'event_category': 'engagement',
-                  'event_label': 'Hero LinkedIn Button'
-                }
-              );
+              gtag('event', 'linkedin_click', {
+                'event_category': 'engagement',
+                'event_label': 'Hero LinkedIn Button'
+              });
             "
           >
 
@@ -1019,7 +1266,6 @@
 
           <ul>
 
-
             <li>
               Led development of AI/ML and GenAI products across
               healthcare operations, claims adjudication, compliance
@@ -1055,7 +1301,6 @@
               Productionized AI solutions with validation, monitoring,
               governance and human-in-the-loop controls.
             </li>
-
 
           </ul>
 
@@ -1094,7 +1339,6 @@
 
           <ul>
 
-
             <li>
               Built and deployed supervised and unsupervised ML
               models to improve sales conversion and operational
@@ -1124,7 +1368,6 @@
               Automated data pipelines and dashboards, saving
               1,000+ hours annually.
             </li>
-
 
           </ul>
 
@@ -1161,6 +1404,8 @@
       <div class="skills-grid">
 
 
+        <!-- GENAI -->
+
         <div class="skill-card">
 
           <h3>
@@ -1171,19 +1416,29 @@
           <div class="tags">
 
             <span class="tag">LLMs</span>
+
             <span class="tag">RAG</span>
+
             <span class="tag">AI Agents</span>
+
             <span class="tag">NL2SQL</span>
+
             <span class="tag">Prompt Engineering</span>
+
             <span class="tag">Vector Search</span>
+
             <span class="tag">Embeddings</span>
+
             <span class="tag">LangChain</span>
+
             <span class="tag">LLM Evaluation</span>
 
           </div>
 
         </div>
 
+
+        <!-- MACHINE LEARNING -->
 
         <div class="skill-card">
 
@@ -1195,19 +1450,29 @@
           <div class="tags">
 
             <span class="tag">Classification</span>
+
             <span class="tag">Regression</span>
+
             <span class="tag">Clustering</span>
+
             <span class="tag">Feature Engineering</span>
+
             <span class="tag">XGBoost</span>
+
             <span class="tag">Model Explainability</span>
+
             <span class="tag">Scikit-learn</span>
+
             <span class="tag">TensorFlow</span>
+
             <span class="tag">PyTorch</span>
 
           </div>
 
         </div>
 
+
+        <!-- APPLIED AI -->
 
         <div class="skill-card">
 
@@ -1219,18 +1484,27 @@
           <div class="tags">
 
             <span class="tag">Multimodal AI</span>
+
             <span class="tag">NLP</span>
+
             <span class="tag">Computer Vision</span>
+
             <span class="tag">Document Intelligence</span>
+
             <span class="tag">OCR</span>
+
             <span class="tag">Conversational AI</span>
+
             <span class="tag">Decision Automation</span>
+
             <span class="tag">Information Extraction</span>
 
           </div>
 
         </div>
 
+
+        <!-- PROGRAMMING -->
 
         <div class="skill-card">
 
@@ -1242,17 +1516,25 @@
           <div class="tags">
 
             <span class="tag">Python</span>
+
             <span class="tag">SQL</span>
+
             <span class="tag">NumPy</span>
+
             <span class="tag">PySpark</span>
+
             <span class="tag">PostgreSQL</span>
+
             <span class="tag">ETL</span>
+
             <span class="tag">Data Pipelines</span>
 
           </div>
 
         </div>
 
+
+        <!-- MLOPS -->
 
         <div class="skill-card">
 
@@ -1264,10 +1546,15 @@
           <div class="tags">
 
             <span class="tag">Azure OpenAI</span>
+
             <span class="tag">Azure AI Search</span>
+
             <span class="tag">Databricks</span>
+
             <span class="tag">Docker</span>
+
             <span class="tag">Git</span>
+
             <span class="tag">CI/CD</span>
 
           </div>
@@ -1422,10 +1709,7 @@
       <div class="contact-links">
 
 
-        <!-- =====================================================
-             GMAIL COMPOSE BUTTON
-             Opens Gmail compose with your email pre-filled
-             ===================================================== -->
+        <!-- GMAIL -->
 
         <a
           href="https://mail.google.com/mail/?view=cm&fs=1&to=sharmamanpreet52@gmail.com"
@@ -1434,18 +1718,14 @@
           class="btn btn-primary"
 
           onclick="
-            gtag(
-              'event',
-              'email_click',
-              {
-                'event_category': 'engagement',
-                'event_label': 'Email Me Button'
-              }
-            );
+            gtag('event', 'email_click', {
+              'event_category': 'engagement',
+              'event_label': 'Email Me Button'
+            });
           "
         >
 
-          Email Me
+          ✉️ Email Me
 
         </a>
 
@@ -1459,18 +1739,35 @@
           class="btn btn-secondary"
 
           onclick="
-            gtag(
-              'event',
-              'linkedin_click',
-              {
-                'event_category': 'engagement',
-                'event_label': 'Contact LinkedIn Button'
-              }
-            );
+            gtag('event', 'linkedin_click', {
+              'event_category': 'engagement',
+              'event_label': 'LinkedIn Button'
+            });
           "
         >
 
-          LinkedIn
+          in LinkedIn
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          href="https://www.instagram.com/light_yagami9/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+
+          onclick="
+            gtag('event', 'instagram_click', {
+              'event_category': 'engagement',
+              'event_label': 'Instagram Button'
+            });
+          "
+        >
+
+          ◎ Instagram
 
         </a>
 
@@ -1491,6 +1788,64 @@
     © 2026 Manpreet Sharma · Senior Data Scientist
 
   </footer>
+
+
+  <!-- =========================================================
+       MOBILE MENU JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        mobileMenu.classList.toggle("active");
+
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+
+      menuToggle.innerHTML =
+        isOpen ? "✕" : "☰";
+
+    });
+
+
+    /*
+      Close the mobile menu automatically
+      when a navigation link is clicked.
+    */
+
+    document
+      .querySelectorAll(".mobile-menu a")
+      .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+          mobileMenu.classList.remove("active");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.innerHTML = "☰";
+
+        });
+
+      });
+
+  </script>
 
 
 </body>
